@@ -100,47 +100,76 @@ class _AirQuaApiState extends State<AirQuaApi> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 500,
-                    width: 700,
+                    height: height*0.35,
+                    width: width*0.9,
                     decoration: BoxDecoration(
-                      color: Colors.orangeAccent,
+                      color: Color(0xFFB3E5FC),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text('Select Location',style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),),
-                        Container(
-                          height: 200,
-                          width: 300,
-                          color: Colors.red,
-                          child: Center(
-                           child: DropdownButton<String>(
-                              value: location[0],
-                              items: getDropDownList(),
-                              onChanged: (value) {
-                                setState(() {
-                                  selectedLocation = value.toString();
-                                  tmpName=selectedLocation;
-                                });
-                              },
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Expanded(
+                            child: Text('Select Location',style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Expanded(
+                            flex: 3,
+                            child: Container(
+                             // color: Colors.red,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Center(
+                                 child: DropdownButton<String>(
+                                   style: TextStyle(
+                                     fontSize: 20,
+                                     color: Colors.black,
+                                     fontWeight: FontWeight.w500,
+                                   ),
+                                    value: location[0],
+                                    items: getDropDownList(),
+                                    onChanged: (value) {
+                                      setState(() {
+                                        selectedLocation = value.toString();
+                                        tmpName=selectedLocation;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return FinalDisplay();
-                            }));
-                          },
-                          child: Container(
-                            height: 100,
-                            width: 100,
-                            color: Colors.red,
-                            child: Center(child: const Text('Submit',style: TextStyle(fontSize: 20),)),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Expanded(
+                            flex: 2,
+                            child: GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return FinalDisplay();
+                                }));
+                              },
+                              child: Container(
+                                height: 70,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Color(0xFF01579B),
+                                ),
+                                child: Center(child: const Text('Submit',style: TextStyle(fontSize: 20,color: Colors.white),)),
+                              ),
+                            ),
                           ),
                         )
                       ],

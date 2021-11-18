@@ -19,22 +19,32 @@ class FinalDisplay extends StatefulWidget {
 class _FinalDisplayState extends State<FinalDisplay> {
 
    void Location(){
-    for(int i=0;i<location.length;i++){
-      if (location[i]==tmpName) {
-        tmpIndex = i;
-      }
-    }
-    if (tmpIndex>=13 && tmpIndex<=25){
-      mask=true;
-      print('toggle');
-    }
-    print('tmpName '+ '$tmpIndex');
+     for(int i=0;i<location.length;i++){
+       if (location[i]==tmpName) {
+         tmpIndex = i;
+         print(tmpIndex);
+       }
+     }
+     if (tmpIndex<=15){
+       mask=true;
+       print('toggle');
+     }
+     print('tmpName '+ '$tmpIndex');
+    /* var sum=0.0;
+     for(int g=0;g<valMap.length.toInt();g++){
+      // sum+=double.parse(valMap[tmpIndex]![g]);
+       print(double.parse(valMap[tmpIndex]![g]).toDouble());
+     }
+     print(sum);*/
   }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    setState(() {
+      mask=false;
+    });
     Location();
   }
 
@@ -124,13 +134,11 @@ class _FinalDisplayState extends State<FinalDisplay> {
                                    padding: const EdgeInsets.only(left: 20,top: 20),
                                    child: Text('Particle                   '+paramap[tmpIndex]![index] , style: TextStyle(color: Colors.white,fontSize: 17,fontWeight: FontWeight.bold),),
                                  ),
-
                                   Padding(
                                     padding: const EdgeInsets.only(left: 20, top: 5),
                                     child: Text('Amount                  '+valMap[tmpIndex]![index].toString()+'µg/m³', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,
                                         fontSize: 17),),
                                   ),
-
                               Padding(
                                 padding: const EdgeInsets.only(left: 20,top: 5),
                                 child: Text('Avg Period              '+avgPeriodMap[tmpIndex]![index].toString()+' seconds', style: TextStyle(color: Colors.white,fontSize: 17,fontWeight: FontWeight.bold),),
