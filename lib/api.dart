@@ -49,6 +49,7 @@ class _AirQuaApiState extends State<AirQuaApi> {
   }
 
   Future AirQuaFetch() async {
+
     var d=Uri.parse(airQualityUrl);
     http.Response response = await http.get(d);
     if (response.statusCode == 200){
