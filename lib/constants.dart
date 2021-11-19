@@ -8,6 +8,7 @@ Color black = Colors.black;
 Color white = Colors.white;
 final Color grey = Color(0xff2E4053);
 final Color pink = Color.fromRGBO(255, 79, 90, 1);
+ final Color maintThemeBlue =Color.fromRGBO(29, 60, 181, 1);
 
 List<BoxShadow> shadowList = [
   BoxShadow(

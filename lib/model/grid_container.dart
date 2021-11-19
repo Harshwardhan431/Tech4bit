@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pict_vit/constants.dart';
 
 class GridContainer extends StatelessWidget {
   const GridContainer({Key? key, required this.name, required this.img})
@@ -13,7 +14,7 @@ class GridContainer extends StatelessWidget {
       height: 180,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
-        color: Colors.red,
+        color: maintThemeBlue,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
@@ -40,3 +41,4 @@ class GridContainer extends StatelessWidget {
     );
   }
 }
+//AssetImage(img)
